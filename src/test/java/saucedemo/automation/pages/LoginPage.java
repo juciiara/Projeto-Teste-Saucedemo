@@ -14,21 +14,34 @@ public class LoginPage extends Drivers {
 
 	Metodos mt = new Metodos();
 
-	public void LoginValido(String usuario, String senha) {
+
+	public void LoginComSucesso(String usuario, String senha) {
 		mt.preencher(nome, usuario);
-		mt.preencher(password, senha);
-		mt.clicar(btnLogin);
+	    mt.preencher(password, senha);
+	    mt.clicar(btnLogin);
 	}
 
 	public void LoginSenhaInvalida(String usuario, String senha) {
 		mt.preencher(nome, usuario);
-		mt.preencher(password, senha);
-		mt.clicar(btnLogin);
+	    mt.preencher(password, senha);
+	    mt.clicar(btnLogin);
+	}
+
+	public void LoginComUsuárioInválido(String usuario, String senha) {
+		mt.preencher(nome, usuario);
+	    mt.preencher(password, senha);
+	    mt.clicar(btnLogin);
+	}
+
+	public void LoginComUsuárioBloqueado(String usuario, String senha) {
+		mt.preencher(nome, usuario);
+	    mt.preencher(password, senha);
+	    mt.clicar(btnLogin);
 	}
 
 	public boolean loginFoiRealizado() {
-		return false;
-
+	    return false;
 	}
+
 
 }
