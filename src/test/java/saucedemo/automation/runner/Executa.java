@@ -14,7 +14,7 @@ import saucedemo.automation.drivers.Drivers;
 		features = "src/test/resources/features",
 		tags = "@login",
 		glue = "saucedemo.automation.steps",
-		dryRun = true,
+		dryRun = false,
 		monochrome = true,
 		plugin = {"pretty","html:target/cucumber-report.html"},
 		snippets = SnippetType.CAMELCASE
@@ -24,12 +24,14 @@ import saucedemo.automation.drivers.Drivers;
 
 public class Executa extends Drivers{
 	
-	public void iniciaraTest() {
+	public static void iniciarTest() {
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.get("https://www.saucedemo.com/");
 		
-		
+	}
+	public static void finalizarTest() {
+		driver.quit();
 	}
 
 }
